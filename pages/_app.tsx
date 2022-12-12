@@ -1,6 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { ClientProvider } from "@micro-stacks/react";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ClientProvider appName="Nextjs + Microstacks" appIconUrl="/vercel.png">
+      <Component {...pageProps} />
+    </ClientProvider>
+  );
 }
+
+export default MyApp;
