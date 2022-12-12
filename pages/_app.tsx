@@ -11,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       appIconUrl="/vercel.png"
       dehydratedState={pageProps?.dehydratedState}
       onNoWalletFound={useCallback(async () => {
-        alert("Install hiro wallet from: https://wallet.hiro.so/wallet/install-web")
+        alert(
+          "Install hiro wallet from: https://wallet.hiro.so/wallet/install-web"
+        );
       }, [])}
       onPersistState={useCallback(async (dehydratedState: string) => {
         await saveSession(dehydratedState);
