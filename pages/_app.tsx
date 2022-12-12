@@ -10,6 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       appName="Nextjs + Microstacks"
       appIconUrl="/vercel.png"
       dehydratedState={pageProps?.dehydratedState}
+      onNoWalletFound={useCallback(async () => {
+        alert("Install hiro wallet from: https://wallet.hiro.so/wallet/install-web")
+      }, [])}
       onPersistState={useCallback(async (dehydratedState: string) => {
         await saveSession(dehydratedState);
       }, [])}
